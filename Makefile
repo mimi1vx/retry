@@ -7,7 +7,7 @@ test: checkstyle test-unit
 .PHONY: test-unit
 test-unit: test-more-bash
 	@command -v prove >/dev/null 2>&1 || echo "Command 'git' not found, can not get test-more-bash to execute tests"
-	prove -r test/
+	prove -v -r test/
 
 test-more-bash:
 	@command -v git >/dev/null 2>&1 || echo "Command 'git' not found, can not get test-more-bash to execute tests"
