@@ -25,6 +25,7 @@ like "$(retry --help)" usage: 'retry help is shown'
 ok $? 'calling help returns success'
 set +e; out=$(retry --unknown-option 2>&1); rc=$?; set -e
 is $rc 1 'calling with unknown option returns failure'
+note "$out"
 like "$out" 'unrecognized option.*usage:' 'retry help is shown for unknown option'
 ok "$(retry true)" 'successful command returns success'
 is "$(retry true)" '' 'successful command does not show any output by default'
